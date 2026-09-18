@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "wbd-conditional-block/group",
+	"title": "Conditional Group",
+	"category": "layout",
+	"icon": "seen",
+	"description": "Group any blocks together and show or hide the whole group based on conditions — handy for wrapping several blocks, or blocks that don't have their own Conditional Visibility panel.",
+	"keywords": [ "conditional", "visibility", "show", "hide", "condition" ],
+	"textdomain": "wbd-conditional-block",
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ],
+		"anchor": true,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"cbConditions": {
+			"type": "object",
+			"default": {
+				"enabled": false,
+				"logic": "all",
+				"conditions": [],
+				"uid": ""
+			}
+		},
+		"tagName": {
+			"type": "string",
+			"default": "div"
+		}
+	}
+}

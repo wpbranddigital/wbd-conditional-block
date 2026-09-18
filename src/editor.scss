@@ -1,0 +1,96 @@
+/**
+ * Block editor styles: the Conditional Visibility panel + in-canvas
+ * indicators. Kept narrow-sidebar friendly (WordPress's settings
+ * sidebar is ~280px on desktop and goes full-width/overlay on smaller
+ * viewports, so avoid any fixed widths here).
+ */
+
+.cb-panel {
+
+	.cb-condition-row {
+		border: 1px solid #e0e0e0;
+		border-radius: 4px;
+		padding: 10px;
+		margin-bottom: 12px;
+		background: #fafafa;
+
+		.components-base-control {
+			margin-bottom: 8px;
+		}
+	}
+
+	.cb-remove-condition {
+		margin-top: 22px;
+	}
+
+	.cb-add-condition {
+		margin-top: 4px;
+		width: 100%;
+		justify-content: center;
+	}
+
+	.cb-field-label {
+		font-weight: 500;
+		font-size: 11px;
+		text-transform: uppercase;
+		margin-bottom: 8px;
+	}
+
+	.cb-weekday-grid {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px 10px;
+	}
+
+	.cb-notice {
+		font-style: italic;
+		color: #757575;
+		font-size: 12px;
+	}
+
+	.cb-analytics-link {
+		margin-top: 12px;
+		font-size: 12px;
+		text-align: center;
+	}
+}
+
+/* In-canvas indicator for blocks with active conditions. */
+.cb-has-conditions {
+	outline: 1px dashed #2271b1;
+	outline-offset: 2px;
+	position: relative;
+}
+
+.cb-conditional-group-editor {
+	border: 1px dashed #757575;
+	border-radius: 4px;
+	padding: 8px;
+	min-height: 40px;
+}
+
+.cb-group-badge {
+	display: inline-block;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+	color: #2271b1;
+	background: #e7f2fa;
+	border-radius: 2px;
+	padding: 2px 6px;
+	margin-bottom: 6px;
+}
+
+/* Keep the panel usable on narrow / mobile viewports of the editor
+   (phones, small tablets) where the settings sidebar becomes a
+   full-width overlay. */
+@media (max-width: 782px) {
+
+	.cb-panel {
+
+		.cb-weekday-grid {
+			gap: 6px 12px;
+		}
+	}
+}

@@ -1,0 +1,28 @@
+{
+  "name": "wbd-conditional-block",
+  "version": "1.0.0",
+  "description": "Show or hide any Gutenberg block based on conditions.",
+  "private": true,
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "lint:js": "wp-scripts lint-js src",
+    "lint:css": "wp-scripts lint-style 'src/**/*.scss'",
+    "format": "wp-scripts format src",
+    "plugin-zip": "wp-scripts plugin-zip"
+  },
+  "devDependencies": {
+    "@wordpress/api-fetch": "^7.54.0",
+    "@wordpress/block-editor": "^17.0.0",
+    "@wordpress/blocks": "^15.27.0",
+    "@wordpress/components": "^40.0.0",
+    "@wordpress/compose": "^8.7.0",
+    "@wordpress/data": "^10.54.0",
+    "@wordpress/element": "^8.6.0",
+    "@wordpress/hooks": "^4.54.0",
+    "@wordpress/i18n": "^6.27.0",
+    "@wordpress/icons": "^15.5.0",
+    "@wordpress/scripts": "^34.2.0"
+  }
+}

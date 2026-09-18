@@ -1,0 +1,653 @@
+# Copyright (C) 2026 bPlugins
+# This file is distributed under the GPLv2 (or later).
+msgid ""
+msgstr ""
+"Project-Id-Version: ConditionalBlocks 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/conditional-blocks\n"
+"POT-Creation-Date: 2026-09-06T11:17:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: conditional-blocks\n"
+
+
+#: blocks/conditional-group/block.json
+msgctxt "block title"
+msgid "Conditional Group"
+msgstr ""
+
+#: blocks/conditional-group/block.json
+msgctxt "block description"
+msgid "Group any blocks together and show or hide the whole group based on conditions — handy for wrapping several blocks, or blocks that don't have their own Conditional Visibility panel."
+msgstr ""
+
+#: conditional-blocks.php
+msgid "Show or hide any Gutenberg block based on login status, user role, device, date/time, page type, geolocation, browser/OS, referrer, query string, cookies, WooCommerce, custom fields, language, and A/B testing — with AND/OR logic and built-in analytics. All features are free."
+msgstr ""
+
+#: includes/class-cb-rest-api.php:123
+msgid "(no title)"
+msgstr ""
+
+#: includes/views/analytics-page.php:21 includes/views/settings-page.php:49
+#: includes/class-cb-admin.php:61
+msgid "Analytics"
+msgstr ""
+
+#: includes/views/analytics-page.php:24
+msgid "Analytics data has been reset."
+msgstr ""
+
+#: includes/views/analytics-page.php:28
+msgid ""
+"Every block with a Conditional Visibility rule reports here each time it is "
+"shown or hidden for a visitor."
+msgstr ""
+
+#: includes/views/analytics-page.php:34
+msgid "Last 7 days"
+msgstr ""
+
+#: includes/views/analytics-page.php:35
+msgid "Last 30 days"
+msgstr ""
+
+#: includes/views/analytics-page.php:36
+msgid "Last 90 days"
+msgstr ""
+
+#: includes/views/analytics-page.php:37
+msgid "All time"
+msgstr ""
+
+#: includes/views/analytics-page.php:58
+msgid "No analytics data yet."
+msgstr ""
+
+#: includes/views/analytics-page.php:59
+msgid ""
+"Add a Conditional Visibility rule to any block in the editor, publish the "
+"page, and visit it — data will show up here."
+msgstr ""
+
+#: includes/views/analytics-page.php:63
+msgid "Daily views"
+msgstr ""
+
+#: includes/views/analytics-page.php:64
+msgid "Bar chart of daily shown vs. hidden block renders"
+msgstr ""
+
+#: includes/views/analytics-page.php:82 includes/views/analytics-page.php:92
+msgid "Shown"
+msgstr ""
+
+#: includes/views/analytics-page.php:84 includes/views/analytics-page.php:93
+msgid "Hidden"
+msgstr ""
+
+#: includes/views/analytics-page.php:87
+msgid "By block"
+msgstr ""
+
+#: includes/views/analytics-page.php:91
+msgid "Block"
+msgstr ""
+
+#: includes/views/analytics-page.php:94
+msgid "Show rate"
+msgstr ""
+
+#: includes/views/analytics-page.php:95
+msgid "A/B split (shown)"
+msgstr ""
+
+#: includes/views/analytics-page.php:110
+msgid "(unknown)"
+msgstr ""
+
+#: includes/views/analytics-page.php:122
+msgid "This will permanently delete all analytics data. Continue?"
+msgstr ""
+
+#: includes/views/analytics-page.php:125
+msgid "Reset analytics data"
+msgstr ""
+
+#: includes/views/settings-page.php:15
+msgid "ConditionalBlocks Settings"
+msgstr ""
+
+#: includes/views/settings-page.php:23
+msgid "White-label name"
+msgstr ""
+
+#: includes/views/settings-page.php:34
+msgid ""
+"Optional. Replace the plugin name shown in wp-admin with your own agency/"
+"client-facing brand."
+msgstr ""
+
+#: includes/views/settings-page.php:38
+msgid "Geolocation lookup"
+msgstr ""
+
+#: includes/views/settings-page.php:41
+msgid "Automatic (CDN header, then free API fallback)"
+msgstr ""
+
+#: includes/views/settings-page.php:42
+msgid "CDN header only (e.g. Cloudflare) — no outbound requests"
+msgstr ""
+
+#: includes/views/settings-page.php:43
+msgid "Disabled"
+msgstr ""
+
+#: includes/views/settings-page.php:45
+msgid ""
+"Controls the \"Geolocation\" condition type. Results are cached per visitor "
+"for 12 hours."
+msgstr ""
+
+#: includes/views/settings-page.php:53
+msgid "Track how often conditional blocks are shown/hidden"
+msgstr ""
+
+#: includes/views/settings-page.php:58
+msgid "A/B testing"
+msgstr ""
+
+#: includes/views/settings-page.php:62
+msgid "Enable the \"A/B Test Variant\" condition type"
+msgstr ""
+
+#. translators: %s: plugin display name.
+#: includes/class-cb-admin.php:60
+#, php-format
+msgid "%s Analytics"
+msgstr ""
+
+#. translators: %s: plugin display name.
+#: includes/class-cb-admin.php:69
+#, php-format
+msgid "%s Settings"
+msgstr ""
+
+#: includes/class-cb-admin.php:70 includes/class-cb-admin.php:89
+msgid "Settings"
+msgstr ""
+
+#: includes/class-cb-admin.php:158
+msgid "Overview"
+msgstr ""
+
+#: includes/class-cb-admin.php:159
+msgid ""
+"Add conditions to any block from the block editor sidebar (Conditional "
+"Visibility panel) to show or hide it for logged-in users, specific roles, "
+"devices, dates, countries, and more."
+msgstr ""
+
+#: includes/class-cb-admin.php:169
+msgid "You are not allowed to do this."
+msgstr ""
+
+#: includes/class-cb-conditions.php:42 src/utils/constants.js:11
+msgid "Login Status"
+msgstr ""
+
+#: includes/class-cb-conditions.php:43 src/utils/constants.js:12
+msgid "User Role"
+msgstr ""
+
+#: includes/class-cb-conditions.php:44 src/utils/constants.js:13
+msgid "Device Type"
+msgstr ""
+
+#: includes/class-cb-conditions.php:45 src/utils/constants.js:14
+msgid "Date / Time"
+msgstr ""
+
+#: includes/class-cb-conditions.php:46 src/utils/constants.js:15
+msgid "Page / Post Type"
+msgstr ""
+
+#: includes/class-cb-conditions.php:47 src/utils/constants.js:16
+msgid "Geolocation (Country)"
+msgstr ""
+
+#: includes/class-cb-conditions.php:48
+#: src/components/condition-value-control.js:206 src/utils/constants.js:17
+msgid "Browser"
+msgstr ""
+
+#: includes/class-cb-conditions.php:49 src/utils/constants.js:18
+msgid "Operating System"
+msgstr ""
+
+#: includes/class-cb-conditions.php:50 src/utils/constants.js:19
+msgid "Referrer URL"
+msgstr ""
+
+#: includes/class-cb-conditions.php:51 src/utils/constants.js:20
+msgid "Query String"
+msgstr ""
+
+#: includes/class-cb-conditions.php:52 src/utils/constants.js:21
+msgid "Cookie Value"
+msgstr ""
+
+#: includes/class-cb-conditions.php:53 src/utils/constants.js:22
+msgid "WooCommerce"
+msgstr ""
+
+#: includes/class-cb-conditions.php:54 src/utils/constants.js:23
+msgid "Custom Field (Meta/ACF)"
+msgstr ""
+
+#: includes/class-cb-conditions.php:55 src/utils/constants.js:24
+msgid "Language"
+msgstr ""
+
+#: includes/class-cb-conditions.php:56 src/utils/constants.js:25
+msgid "A/B Test Variant"
+msgstr ""
+
+#: src/components/condition-row.js:16
+msgid "Condition type"
+msgstr ""
+
+#: src/components/condition-row.js:25
+msgid "Operator"
+msgstr ""
+
+#: src/components/condition-row.js:28
+msgid "Is"
+msgstr ""
+
+#: src/components/condition-row.js:29
+msgid "Is not"
+msgstr ""
+
+#: src/components/condition-row.js:38
+msgid "Remove condition"
+msgstr ""
+
+#: src/components/post-picker.js:60
+msgid "Specific posts/pages"
+msgstr ""
+
+#: src/components/conditional-panel.js:55
+msgid "Conditional Visibility"
+msgstr ""
+
+#: src/components/conditional-panel.js:60
+msgid "Show/hide this block based on conditions"
+msgstr ""
+
+#: src/components/conditional-panel.js:69
+msgid "Quick template"
+msgstr ""
+
+#: src/components/conditional-panel.js:72
+msgid "— Apply a template —"
+msgstr ""
+
+#: src/components/conditional-panel.js:81
+msgid "Logic"
+msgstr ""
+
+#: src/components/conditional-panel.js:84
+msgid "Match ALL conditions (AND)"
+msgstr ""
+
+#: src/components/conditional-panel.js:85
+msgid "Match ANY condition (OR)"
+msgstr ""
+
+#: src/components/conditional-panel.js:116
+msgid "Add condition"
+msgstr ""
+
+#: src/components/conditional-panel.js:121
+msgid "No conditions set — this block will always be visible."
+msgstr ""
+
+#: src/components/conditional-panel.js:128
+msgid "View analytics for conditional blocks →"
+msgstr ""
+
+#: src/components/condition-value-control.js:26
+msgid "WooCommerce Customer"
+msgstr ""
+
+#: src/components/condition-value-control.js:38
+msgid "Visitor is"
+msgstr ""
+
+#: src/components/condition-value-control.js:41
+msgid "Logged in"
+msgstr ""
+
+#: src/components/condition-value-control.js:42
+msgid "Logged out"
+msgstr ""
+
+#: src/components/condition-value-control.js:52
+msgid "Roles (any match)"
+msgstr ""
+
+#: src/components/condition-value-control.js:74
+msgid "Device"
+msgstr ""
+
+#: src/components/condition-value-control.js:87
+msgid "Mode"
+msgstr ""
+
+#: src/components/condition-value-control.js:90
+msgid "Date range (or countdown end date)"
+msgstr ""
+
+#: src/components/condition-value-control.js:91
+msgid "Recurring day of week"
+msgstr ""
+
+#: src/components/condition-value-control.js:99
+msgid "Start (optional)"
+msgstr ""
+
+#: src/components/condition-value-control.js:106
+msgid "End (optional)"
+msgstr ""
+
+#: src/components/condition-value-control.js:115
+msgid "Days"
+msgstr ""
+
+#: src/components/condition-value-control.js:132
+msgid "Start time (optional, HH:MM)"
+msgstr ""
+
+#: src/components/condition-value-control.js:139
+msgid "End time (optional, HH:MM)"
+msgstr ""
+
+#: src/components/condition-value-control.js:156
+msgid "Show on"
+msgstr ""
+
+#: src/components/condition-value-control.js:165
+msgid "Post types (any match)"
+msgstr ""
+
+#: src/components/condition-value-control.js:195
+msgid "Country codes (ISO 2-letter, any match)"
+msgstr ""
+
+#: src/components/condition-value-control.js:217
+msgid "Operating system"
+msgstr ""
+
+#: src/components/condition-value-control.js:230
+msgid "Referrer"
+msgstr ""
+
+#: src/components/condition-value-control.js:238
+msgid "Referrer URL contains…"
+msgstr ""
+
+#: src/components/condition-value-control.js:254
+msgid "Parameter name"
+msgstr ""
+
+#: src/components/condition-value-control.js:261
+#: src/components/condition-value-control.js:283
+msgid "Expected value (optional — leave blank to just check it exists)"
+msgstr ""
+
+#: src/components/condition-value-control.js:276
+msgid "Cookie name"
+msgstr ""
+
+#: src/components/condition-value-control.js:297
+msgid ""
+"WooCommerce is not active. This condition will always evaluate to false."
+msgstr ""
+
+#: src/components/condition-value-control.js:304
+msgid "Check"
+msgstr ""
+
+#: src/components/condition-value-control.js:312
+msgid "Minimum cart subtotal"
+msgstr ""
+
+#: src/components/condition-value-control.js:319
+msgid "Product ID"
+msgstr ""
+
+#: src/components/condition-value-control.js:326
+msgid "Minimum lifetime spend"
+msgstr ""
+
+#: src/components/condition-value-control.js:333
+msgid "Must be a logged-in customer (unchecked = must be a guest)"
+msgstr ""
+
+#: src/components/condition-value-control.js:348
+msgid "ACF not detected — falling back to plain post meta lookup by key."
+msgstr ""
+
+#: src/components/condition-value-control.js:360
+msgid "Language code (e.g. bn, en, bn_BD)"
+msgstr ""
+
+#: src/components/condition-value-control.js:371
+msgid "Variant"
+msgstr ""
+
+#: src/components/condition-value-control.js:374
+msgid "Variant A"
+msgstr ""
+
+#: src/components/condition-value-control.js:375
+msgid "Variant B"
+msgstr ""
+
+#: src/components/condition-value-control.js:378
+msgid "Visitors are randomly (and consistently) split 50/50 between A and B."
+msgstr ""
+
+#: src/components/condition-value-control.js:386
+msgid "Value"
+msgstr ""
+
+#: src/components/condition-value-control.js:389
+msgid "Custom condition type registered by a developer."
+msgstr ""
+
+#: src/components/condition-value-control.js:400
+msgid "Field key"
+msgstr ""
+
+#: src/components/condition-value-control.js:407
+msgid "Compare"
+msgstr ""
+
+#: src/components/condition-value-control.js:415
+msgid "Expected value"
+msgstr ""
+
+#: src/blocks/conditional-group/edit.js:20
+msgid "Conditional Group — rules active"
+msgstr ""
+
+#: src/utils/constants.js:29
+msgid "Mobile"
+msgstr ""
+
+#: src/utils/constants.js:30
+msgid "Tablet"
+msgstr ""
+
+#: src/utils/constants.js:31
+msgid "Desktop"
+msgstr ""
+
+#: src/utils/constants.js:40 src/utils/constants.js:49
+msgid "Other"
+msgstr ""
+
+#: src/utils/constants.js:53
+msgid "Any referrer"
+msgstr ""
+
+#: src/utils/constants.js:54
+msgid "Direct (no referrer)"
+msgstr ""
+
+#: src/utils/constants.js:61
+msgid "Custom (contains…)"
+msgstr ""
+
+#: src/utils/constants.js:65
+msgid "Specific post types / posts"
+msgstr ""
+
+#: src/utils/constants.js:66
+msgid "Front page"
+msgstr ""
+
+#: src/utils/constants.js:67
+msgid "Blog index"
+msgstr ""
+
+#: src/utils/constants.js:68
+msgid "Any single post"
+msgstr ""
+
+#: src/utils/constants.js:69
+msgid "Any archive"
+msgstr ""
+
+#: src/utils/constants.js:70
+msgid "Search results"
+msgstr ""
+
+#: src/utils/constants.js:71
+msgid "404 (not found)"
+msgstr ""
+
+#: src/utils/constants.js:75
+msgid "Cart has items"
+msgstr ""
+
+#: src/utils/constants.js:76
+msgid "Cart subtotal is at least…"
+msgstr ""
+
+#: src/utils/constants.js:77
+msgid "Customer purchased product ID…"
+msgstr ""
+
+#: src/utils/constants.js:78
+msgid "Customer lifetime spend is at least…"
+msgstr ""
+
+#: src/utils/constants.js:79
+msgid "Is a logged-in customer (vs. guest)"
+msgstr ""
+
+#: src/utils/constants.js:83
+msgid "Equals"
+msgstr ""
+
+#: src/utils/constants.js:84
+msgid "Does not equal"
+msgstr ""
+
+#: src/utils/constants.js:85
+msgid "Greater than"
+msgstr ""
+
+#: src/utils/constants.js:86
+msgid "Less than"
+msgstr ""
+
+#: src/utils/constants.js:87
+msgid "Greater than or equal to"
+msgstr ""
+
+#: src/utils/constants.js:88
+msgid "Less than or equal to"
+msgstr ""
+
+#: src/utils/constants.js:89
+msgid "Contains"
+msgstr ""
+
+#: src/utils/constants.js:90
+msgid "Has any value"
+msgstr ""
+
+#: src/utils/constants.js:94
+msgid "Sun"
+msgstr ""
+
+#: src/utils/constants.js:95
+msgid "Mon"
+msgstr ""
+
+#: src/utils/constants.js:96
+msgid "Tue"
+msgstr ""
+
+#: src/utils/constants.js:97
+msgid "Wed"
+msgstr ""
+
+#: src/utils/constants.js:98
+msgid "Thu"
+msgstr ""
+
+#: src/utils/constants.js:99
+msgid "Fri"
+msgstr ""
+
+#: src/utils/constants.js:100
+msgid "Sat"
+msgstr ""
+
+#: src/utils/templates.js:9
+msgid "Show only to logged-in users"
+msgstr ""
+
+#: src/utils/templates.js:17
+msgid "Show only to logged-out visitors"
+msgstr ""
+
+#: src/utils/templates.js:25
+msgid "Hide on mobile devices"
+msgstr ""
+
+#: src/utils/templates.js:33
+msgid "Mobile-only call to action"
+msgstr ""
+
+#: src/utils/templates.js:41
+msgid "Show only to administrators"
+msgstr ""
+
+#: src/utils/templates.js:49
+msgid "Exclusive offer for logged-in members"
+msgstr ""
+
+#: src/utils/templates.js:60
+msgid "A/B test this block (Variant A)"
+msgstr ""

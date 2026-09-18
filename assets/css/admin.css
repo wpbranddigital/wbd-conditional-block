@@ -1,0 +1,109 @@
+/**
+ * ConditionalBlocks — wp-admin (Analytics + Settings) styles.
+ * Responsive: the chart and table both reflow on narrow admin viewports
+ * (WordPress collapses the admin menu under ~960px).
+ */
+
+.cb-wrap .cb-range-tabs {
+	margin: 8px 0 16px;
+}
+
+.cb-empty-state {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-left: 4px solid #2271b1;
+	padding: 16px 20px;
+	max-width: 640px;
+}
+
+.cb-chart {
+	display: flex;
+	align-items: flex-end;
+	gap: 4px;
+	height: 200px;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	padding: 16px 12px 8px;
+	overflow-x: auto;
+	max-width: 900px;
+}
+
+.cb-chart-col {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	flex: 1 0 18px;
+	min-width: 18px;
+	height: 100%;
+}
+
+.cb-chart-bars {
+	display: flex;
+	align-items: flex-end;
+	gap: 2px;
+	height: 160px;
+	width: 100%;
+	justify-content: center;
+}
+
+.cb-bar {
+	width: 6px;
+	min-height: 1px;
+	border-radius: 2px 2px 0 0;
+	display: inline-block;
+}
+
+.cb-bar-shown {
+	background: #2271b1;
+}
+
+.cb-bar-hidden {
+	background: #d63638;
+}
+
+.cb-chart-label {
+	font-size: 10px;
+	color: #646970;
+	margin-top: 6px;
+	writing-mode: horizontal-tb;
+	white-space: nowrap;
+}
+
+.cb-legend {
+	font-size: 12px;
+	color: #646970;
+}
+
+.cb-legend-swatch {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 2px;
+	margin-right: 4px;
+	vertical-align: middle;
+}
+
+.cb-table {
+	max-width: 900px;
+}
+
+.cb-reset-form {
+	margin-top: 20px;
+}
+
+/* Narrow admin viewport (collapsed menu / small tablet & mobile) */
+@media (max-width: 782px) {
+	.cb-chart {
+		height: 160px;
+	}
+
+	.cb-chart-bars {
+		height: 120px;
+	}
+
+	.cb-table th,
+	.cb-table td {
+		font-size: 13px;
+	}
+}

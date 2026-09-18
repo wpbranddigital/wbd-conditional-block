@@ -1,0 +1,10 @@
+/**
+ * ConditionalBlocks — minimal frontend styles.
+ * The plugin hides blocks by removing their HTML entirely (server-side),
+ * so there is very little to style here; this covers the "Conditional
+ * Group" wrapper only.
+ */
+
+.cb-conditional-group:empty {
+	display: none;
+}
