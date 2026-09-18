@@ -50,16 +50,6 @@ Need to hide several blocks together, or wrap content that doesn't have its own 
 
 Every conditional block reports how many times it was shown vs. hidden. View daily trends and per-block totals — including the A/B variant split — from **WBD_Conditional_Block → Analytics** in your dashboard. No data leaves your site.
 
-= Developer friendly =
-
-Register your own condition types with a simple filter:
-
-`add_filter( 'WBD_Conditional_Block_register_condition', function( $conditions ) {
-    $conditions['my_condition'] = function( $value, $context ) {
-        return $value === 'yes';
-    };
-    return $conditions;
-} );`
 
 = White-label =
 
@@ -71,6 +61,19 @@ Rename the plugin's dashboard menu and pages to your own brand from **WBD_Condit
 2. Activate the plugin through the "Plugins" screen in WordPress.
 3. Open any post or page in the block editor, select a block, and open the "Conditional Visibility" panel in the settings sidebar (right-hand panel).
 4. Enable it, add a condition, and publish. That's it.
+
+== Development ==
+
+Public source code repository:
+https://github.com/wpbranddigital/wbd-conditional-block
+
+Build Instructions:
+
+1. npm install
+2. npm run build
+3. npm run start (development)
+WBD Conditional Block is built using @wordpress/scripts.
+
 
 == Frequently Asked Questions ==
 
