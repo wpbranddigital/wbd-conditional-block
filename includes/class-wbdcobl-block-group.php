@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class CB_Block_Group
+ * Class WBDCOBL_Block_Group
  */
-class CB_Block_Group {
+class WBDCOBL_Block_Group {
 
 	/**
 	 * Bootstrap.
@@ -28,12 +28,12 @@ class CB_Block_Group {
 	/**
 	 * Register the block type from block.json, wiring in the dynamic
 	 * render callback (visibility is evaluated the same way as any
-	 * other block, via CB_Renderer — see filter_block_output(), which
+	 * other block, via WBDCOBL_Renderer — see filter_block_output(), which
 	 * fires for this block too since render_block runs for all blocks).
 	 */
 	public static function register_block() {
 		register_block_type(
-			CB_PLUGIN_DIR . 'blocks/conditional-group',
+			WBDCOBL_PLUGIN_DIR . 'blocks/conditional-group',
 			array(
 				'render_callback' => array( __CLASS__, 'render' ),
 			)
@@ -42,7 +42,7 @@ class CB_Block_Group {
 
 	/**
 	 * Render callback: outputs the wrapped inner block content as-is.
-	 * The actual show/hide decision happens in CB_Renderer::filter_block_output()
+	 * The actual show/hide decision happens in WBDCOBL_Renderer::filter_block_output()
 	 * via the generic `render_block` filter, which runs on top of this
 	 * callback's output — so this method only needs to produce the normal
 	 * wrapper markup.
@@ -56,7 +56,7 @@ class CB_Block_Group {
 
 		$wrapper_attributes = get_block_wrapper_attributes(
 			array(
-				'class' => 'cb-conditional-group',
+				'class' => 'wbdcobl-conditional-group',
 			)
 		);
 

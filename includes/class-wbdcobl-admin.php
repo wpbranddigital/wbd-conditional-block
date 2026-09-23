@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class CB_Admin
+ * Class WBDCOBL_Admin
  */
-class CB_Admin {
+class WBDCOBL_Admin {
 
 	/**
 	 * Bootstrap.
@@ -22,7 +22,7 @@ class CB_Admin {
 		add_action( 'admin_init', array( __CLASS__, 'register_settings' ) );
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_admin_assets' ) );
 		add_action( 'admin_post_cb_reset_analytics', array( __CLASS__, 'handle_reset_analytics' ) );
-		add_filter( 'plugin_action_links_' . CB_PLUGIN_BASENAME, array( __CLASS__, 'add_settings_link' ) );
+		add_filter( 'plugin_action_links_' . WBDCOBL_PLUGIN_BASENAME, array( __CLASS__, 'add_settings_link' ) );
 	}
 
 	/**
@@ -32,7 +32,7 @@ class CB_Admin {
 	 * @return string
 	 */
 	public static function get_display_name() {
-		$settings = get_option( 'cb_settings', array() );
+		$settings = get_option( 'wbdcobl_settings', array() );
 		if ( ! empty( $settings['white_label_name'] ) ) {
 			return $settings['white_label_name'];
 		}
@@ -97,8 +97,8 @@ class CB_Admin {
 	 */
 	public static function register_settings() {
 		register_setting(
-			'cb_settings_group',
-			'cb_settings',
+			'wbdcobl_settings_group',
+			'wbdcobl_settings',
 			array(
 				'type'              => 'array',
 				'sanitize_callback' => array( __CLASS__, 'sanitize_settings' ),
@@ -141,7 +141,7 @@ class CB_Admin {
 			return;
 		}
 
-		wp_enqueue_style( 'wbd-conditional-block-admin', CB_PLUGIN_URL . 'assets/css/admin.css', array(), CB_VERSION );
+		wp_enqueue_style( 'wbd-conditional-block-admin', WBDCOBL_PLUGIN_URL . 'assets/css/admin.css', array(), WBDCOBL_VERSION );
 	}
 
 	/**
@@ -154,7 +154,7 @@ class CB_Admin {
 		}
 		$screen->add_help_tab(
 			array(
-				'id'      => 'cb-overview',
+				'id'      => 'wbdcobl-overview',
 				'title'   => __( 'Overview', 'wbd-conditional-block' ),
 				'content' => '<p>' . esc_html__( 'Add conditions to any block from the block editor sidebar (Conditional Visibility panel) to show or hide it for logged-in users, specific roles, devices, dates, countries, and more.', 'wbd-conditional-block' ) . '</p>',
 			)
@@ -169,16 +169,16 @@ class CB_Admin {
 			wp_die( esc_html__( 'You are not allowed to do this.', 'wbd-conditional-block' ) );
 		}
 
-		check_admin_referer( 'cb_reset_analytics' );
+		check_admin_referer( 'wbdcobl_reset_analytics' );
 
-		require_once CB_PLUGIN_DIR . 'includes/class-cb-analytics.php';
-		CB_Analytics::truncate();
+		require_once WBDCOBL_PLUGIN_DIR . 'includes/class-wbdcobl-analytics.php';
+		WBDCOBL_Analytics::truncate();
 
 		wp_safe_redirect(
 			add_query_arg(
 				array(
 					'page'     => 'wbd-conditional-block',
-					'cb_reset' => '1',
+					'wbdcobl_reset' => '1',
 				),
 				admin_url( 'admin.php' )
 			)
@@ -194,14 +194,14 @@ class CB_Admin {
 			return;
 		}
 
-		require_once CB_PLUGIN_DIR . 'includes/class-cb-analytics.php';
+		require_once WBDCOBL_PLUGIN_DIR . 'includes/class-wbdcobl-analytics.php';
 
-		$days    = isset( $_GET['cb_range'] ) ? max( 0, (int) $_GET['cb_range'] ) : 30; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-		$summary = CB_Analytics::get_summary( $days );
-		$daily   = CB_Analytics::get_daily_totals( $days );
+		$days    = isset( $_GET['wbdcobl_range'] ) ? max( 0, (int) $_GET['wbdcobl_range'] ) : 30; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$summary = WBDCOBL_Analytics::get_summary( $days );
+		$daily   = WBDCOBL_Analytics::get_daily_totals( $days );
 		$name    = self::get_display_name();
 
-		include CB_PLUGIN_DIR . 'includes/views/analytics-page.php';
+		include WBDCOBL_PLUGIN_DIR . 'includes/views/analytics-page.php';
 	}
 
 	/**
@@ -213,7 +213,7 @@ class CB_Admin {
 		}
 
 		$settings = wp_parse_args(
-			get_option( 'cb_settings', array() ),
+			get_option( 'wbdcobl_settings', array() ),
 			array(
 				'white_label_name'     => '',
 				'geolocation_provider' => 'auto',
@@ -222,6 +222,6 @@ class CB_Admin {
 			)
 		);
 
-		include CB_PLUGIN_DIR . 'includes/views/settings-page.php';
+		include WBDCOBL_PLUGIN_DIR . 'includes/views/settings-page.php';
 	}
 }

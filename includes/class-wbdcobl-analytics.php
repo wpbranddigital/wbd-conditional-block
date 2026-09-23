@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class CB_Analytics
+ * Class WBDCOBL_Analytics
  */
-class CB_Analytics {
+class WBDCOBL_Analytics {
 	// phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 
 	/**
@@ -22,7 +22,7 @@ class CB_Analytics {
 	 */
 	public static function table_name() {
 		global $wpdb;
-		return $wpdb->prefix . 'cb_analytics';
+		return $wpdb->prefix . 'wbdcobl_analytics';
 	}
 
 	/**
@@ -52,7 +52,7 @@ class CB_Analytics {
 			shown_count BIGINT UNSIGNED NOT NULL DEFAULT 0,
 			hidden_count BIGINT UNSIGNED NOT NULL DEFAULT 0,
 			PRIMARY KEY  (id),
-			UNIQUE KEY cb_uid_variant_day (block_uid, variant, day),
+			UNIQUE KEY wbdcobl_uid_variant_day (block_uid, variant, day),
 			KEY block_uid (block_uid)
 		) {$charset_collate};";
 
@@ -63,9 +63,9 @@ class CB_Analytics {
 	 * Run create_table() again if the stored schema version is stale.
 	 */
 	public static function maybe_upgrade_table() {
-		if ( get_option( 'cb_analytics_db_version' ) !== CB_ANALYTICS_TABLE_VERSION ) {
+		if ( get_option( 'wbdcobl_analytics_db_version' ) !== WBDCOBL_ANALYTICS_TABLE_VERSION ) {
 			self::create_table();
-			update_option( 'cb_analytics_db_version', CB_ANALYTICS_TABLE_VERSION );
+			update_option( 'wbdcobl_analytics_db_version', WBDCOBL_ANALYTICS_TABLE_VERSION );
 		}
 	}
 
@@ -77,7 +77,7 @@ class CB_Analytics {
 	 * @param string $block_name Block type name, e.g. 'core/paragraph'.
 	 */
 	public static function track( $uid, $shown, $block_name = '' ) {
-		$settings = get_option( 'cb_settings', array() );
+		$settings = get_option( 'wbdcobl_settings', array() );
 		if ( isset( $settings['analytics_enabled'] ) && ! $settings['analytics_enabled'] ) {
 			return;
 		}
@@ -86,7 +86,7 @@ class CB_Analytics {
 
 		$uid     = substr( sanitize_key( $uid ), 0, 64 );
 		$today   = current_time( 'Y-m-d' );
-		$variant = isset( $_COOKIE['cb_ab_variant'] ) ? sanitize_key( wp_unslash( $_COOKIE['cb_ab_variant'] ) ) : '';
+		$variant = isset( $_COOKIE['wbdcobl_ab_variant'] ) ? sanitize_key( wp_unslash( $_COOKIE['wbdcobl_ab_variant'] ) ) : '';
 		$variant = in_array( $variant, array( 'a', 'b' ), true ) ? $variant : '';
 
 		if ( '' === $uid ) {

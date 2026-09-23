@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class CB_Renderer
+ * Class WBDCOBL_Renderer
  */
-class CB_Renderer {
+class WBDCOBL_Renderer {
 
 	/**
 	 * Bootstrap. Currently a no-op placeholder kept for symmetry with the
@@ -48,7 +48,7 @@ class CB_Renderer {
 
 		$uid = isset( $rules['uid'] ) ? sanitize_key( $rules['uid'] ) : '';
 		if ( '' !== $uid ) {
-			CB_Analytics::track( $uid, $should_show, isset( $block['blockName'] ) ? $block['blockName'] : '' );
+			WBDCOBL_Analytics::track( $uid, $should_show, isset( $block['blockName'] ) ? $block['blockName'] : '' );
 		}
 
 		/**
@@ -88,7 +88,7 @@ class CB_Renderer {
 			if ( ! is_array( $condition ) || empty( $condition['type'] ) ) {
 				continue;
 			}
-			$results[] = CB_Conditions::evaluate( $condition );
+			$results[] = WBDCOBL_Conditions::evaluate( $condition );
 		}
 
 		if ( empty( $results ) ) {
@@ -121,8 +121,8 @@ class CB_Renderer {
 	 * @return string 'a' or 'b'.
 	 */
 	public static function get_or_assign_ab_variant() {
-		if ( isset( $_COOKIE['cb_ab_variant'] ) ) {
-			$existing = sanitize_key( wp_unslash( $_COOKIE['cb_ab_variant'] ) );
+		if ( isset( $_COOKIE['wbdcobl_ab_variant'] ) ) {
+			$existing = sanitize_key( wp_unslash( $_COOKIE['wbdcobl_ab_variant'] ) );
 			if ( in_array( $existing, array( 'a', 'b' ), true ) ) {
 				return $existing;
 			}
@@ -131,10 +131,10 @@ class CB_Renderer {
 		$variant = ( wp_rand( 0, 1 ) === 0 ) ? 'a' : 'b';
 
 		if ( ! headers_sent() ) {
-			wbd_conditional_block_set_cookie( 'cb_ab_variant', $variant, time() + 30 * DAY_IN_SECONDS );
+			wbd_conditional_block_set_cookie( 'wbdcobl_ab_variant', $variant, time() + 30 * DAY_IN_SECONDS );
 		}
 
-		$_COOKIE['cb_ab_variant'] = $variant;
+		$_COOKIE['wbdcobl_ab_variant'] = $variant;
 
 		return $variant;
 	}

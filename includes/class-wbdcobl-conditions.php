@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class CB_Conditions
+ * Class WBDCOBL_Conditions
  *
  * Evaluates a single condition (type + value + operator) against the
  * current request. Developers can register additional condition types
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *         return $conditions;
  *     } );
  */
-class CB_Conditions {
+class WBDCOBL_Conditions {
 
 	/**
 	 * Cache of registered custom condition callbacks.
@@ -206,7 +206,7 @@ class CB_Conditions {
 	 * @return bool
 	 */
 	private static function check_device_type( $value ) {
-		$device = isset( $_COOKIE['cb_device'] ) ? sanitize_key( wp_unslash( $_COOKIE['cb_device'] ) ) : '';
+		$device = isset( $_COOKIE['wbdcobl_device'] ) ? sanitize_key( wp_unslash( $_COOKIE['wbdcobl_device'] ) ) : '';
 
 		if ( in_array( $device, array( 'mobile', 'tablet', 'desktop' ), true ) ) {
 			return $device === $value;
@@ -338,7 +338,7 @@ class CB_Conditions {
 			return false;
 		}
 
-		$user_country = CB_Geolocation::get_country();
+		$user_country = WBDCOBL_Geolocation::get_country();
 
 		if ( empty( $user_country ) ) {
 			return false;
@@ -645,16 +645,16 @@ class CB_Conditions {
 	 * A/B Test Variant: value is 'a' or 'b'. Assignment is a 50/50 split
 	 * persisted in a first-party cookie so a visitor keeps seeing the
 	 * same variant across a session (see assets/js/detect-device.js and
-	 * CB_Renderer::maybe_set_ab_cookie()).
+	 * WBDCOBL_Renderer::maybe_set_ab_cookie()).
 	 *
 	 * @param string $value Value.
 	 * @return bool
 	 */
 	private static function check_ab_test( $value ) {
-		$variant = isset( $_COOKIE['cb_ab_variant'] ) ? sanitize_key( wp_unslash( $_COOKIE['cb_ab_variant'] ) ) : '';
+		$variant = isset( $_COOKIE['wbdcobl_ab_variant'] ) ? sanitize_key( wp_unslash( $_COOKIE['wbdcobl_ab_variant'] ) ) : '';
 
 		if ( ! in_array( $variant, array( 'a', 'b' ), true ) ) {
-			$variant = CB_Renderer::get_or_assign_ab_variant();
+			$variant = WBDCOBL_Renderer::get_or_assign_ab_variant();
 		}
 
 		return strtolower( (string) $value ) === $variant;

@@ -4,7 +4,7 @@ Tags: conditional content, gutenberg, block visibility, woocommerce, a/b testing
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,6 +74,11 @@ Build Instructions:
 3. npm run start (development)
 WBD Conditional Block is built using @wordpress/scripts.
 
+== External services ==
+This plugin connects to a free external geolocation API (`ip-api.com`) to determine a visitor's country when the "Geolocation" condition is used. 
+It sends the user's IP address to the API to obtain their country code, allowing the block visibility rules to work. The results are cached per IP to minimize requests. This service is provided by Artia International (ip-api.com). 
+Please review their [Terms of Service](https://ip-api.com/docs/legal) and [Privacy Policy](https://ip-api.com/docs/legal).
+
 
 == Frequently Asked Questions ==
 
@@ -105,6 +110,11 @@ It simply renders normally again (unconditionally visible). No content is delete
 4. A block hidden on the frontend for a logged-out visitor.
 
 == Changelog ==
+
+= 1.0.1 =
+* Fix: Removed "Tested up to" tag from the main plugin file.
+* Fix: Added unique prefixes (`WBDCOBL_`, `wbdcobl_`) to all functions, classes, globals, and stored data to avoid naming collisions.
+* Fix: Added documentation in `readme.txt` disclosing the use of the `ip-api.com` external geolocation service.
 
 = 1.0.0 =
 * Initial release: 15 condition types, AND/OR logic, quick templates, the Conditional Group block, built-in analytics, A/B testing, developer API, and white-label settings — all free.

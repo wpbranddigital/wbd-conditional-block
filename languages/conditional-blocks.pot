@@ -29,12 +29,12 @@ msgstr ""
 msgid "Show or hide any Gutenberg block based on login status, user role, device, date/time, page type, geolocation, browser/OS, referrer, query string, cookies, WooCommerce, custom fields, language, and A/B testing — with AND/OR logic and built-in analytics. All features are free."
 msgstr ""
 
-#: includes/class-cb-rest-api.php:123
+#: includes/class-wbdcobl-rest-api.php:123
 msgid "(no title)"
 msgstr ""
 
 #: includes/views/analytics-page.php:21 includes/views/settings-page.php:49
-#: includes/class-cb-admin.php:61
+#: includes/class-wbdcobl-admin.php:61
 msgid "Analytics"
 msgstr ""
 
@@ -167,94 +167,94 @@ msgid "Enable the \"A/B Test Variant\" condition type"
 msgstr ""
 
 #. translators: %s: plugin display name.
-#: includes/class-cb-admin.php:60
+#: includes/class-wbdcobl-admin.php:60
 #, php-format
 msgid "%s Analytics"
 msgstr ""
 
 #. translators: %s: plugin display name.
-#: includes/class-cb-admin.php:69
+#: includes/class-wbdcobl-admin.php:69
 #, php-format
 msgid "%s Settings"
 msgstr ""
 
-#: includes/class-cb-admin.php:70 includes/class-cb-admin.php:89
+#: includes/class-wbdcobl-admin.php:70 includes/class-wbdcobl-admin.php:89
 msgid "Settings"
 msgstr ""
 
-#: includes/class-cb-admin.php:158
+#: includes/class-wbdcobl-admin.php:158
 msgid "Overview"
 msgstr ""
 
-#: includes/class-cb-admin.php:159
+#: includes/class-wbdcobl-admin.php:159
 msgid ""
 "Add conditions to any block from the block editor sidebar (Conditional "
 "Visibility panel) to show or hide it for logged-in users, specific roles, "
 "devices, dates, countries, and more."
 msgstr ""
 
-#: includes/class-cb-admin.php:169
+#: includes/class-wbdcobl-admin.php:169
 msgid "You are not allowed to do this."
 msgstr ""
 
-#: includes/class-cb-conditions.php:42 src/utils/constants.js:11
+#: includes/class-wbdcobl-conditions.php:42 src/utils/constants.js:11
 msgid "Login Status"
 msgstr ""
 
-#: includes/class-cb-conditions.php:43 src/utils/constants.js:12
+#: includes/class-wbdcobl-conditions.php:43 src/utils/constants.js:12
 msgid "User Role"
 msgstr ""
 
-#: includes/class-cb-conditions.php:44 src/utils/constants.js:13
+#: includes/class-wbdcobl-conditions.php:44 src/utils/constants.js:13
 msgid "Device Type"
 msgstr ""
 
-#: includes/class-cb-conditions.php:45 src/utils/constants.js:14
+#: includes/class-wbdcobl-conditions.php:45 src/utils/constants.js:14
 msgid "Date / Time"
 msgstr ""
 
-#: includes/class-cb-conditions.php:46 src/utils/constants.js:15
+#: includes/class-wbdcobl-conditions.php:46 src/utils/constants.js:15
 msgid "Page / Post Type"
 msgstr ""
 
-#: includes/class-cb-conditions.php:47 src/utils/constants.js:16
+#: includes/class-wbdcobl-conditions.php:47 src/utils/constants.js:16
 msgid "Geolocation (Country)"
 msgstr ""
 
-#: includes/class-cb-conditions.php:48
+#: includes/class-wbdcobl-conditions.php:48
 #: src/components/condition-value-control.js:206 src/utils/constants.js:17
 msgid "Browser"
 msgstr ""
 
-#: includes/class-cb-conditions.php:49 src/utils/constants.js:18
+#: includes/class-wbdcobl-conditions.php:49 src/utils/constants.js:18
 msgid "Operating System"
 msgstr ""
 
-#: includes/class-cb-conditions.php:50 src/utils/constants.js:19
+#: includes/class-wbdcobl-conditions.php:50 src/utils/constants.js:19
 msgid "Referrer URL"
 msgstr ""
 
-#: includes/class-cb-conditions.php:51 src/utils/constants.js:20
+#: includes/class-wbdcobl-conditions.php:51 src/utils/constants.js:20
 msgid "Query String"
 msgstr ""
 
-#: includes/class-cb-conditions.php:52 src/utils/constants.js:21
+#: includes/class-wbdcobl-conditions.php:52 src/utils/constants.js:21
 msgid "Cookie Value"
 msgstr ""
 
-#: includes/class-cb-conditions.php:53 src/utils/constants.js:22
+#: includes/class-wbdcobl-conditions.php:53 src/utils/constants.js:22
 msgid "WooCommerce"
 msgstr ""
 
-#: includes/class-cb-conditions.php:54 src/utils/constants.js:23
+#: includes/class-wbdcobl-conditions.php:54 src/utils/constants.js:23
 msgid "Custom Field (Meta/ACF)"
 msgstr ""
 
-#: includes/class-cb-conditions.php:55 src/utils/constants.js:24
+#: includes/class-wbdcobl-conditions.php:55 src/utils/constants.js:24
 msgid "Language"
 msgstr ""
 
-#: includes/class-cb-conditions.php:56 src/utils/constants.js:25
+#: includes/class-wbdcobl-conditions.php:56 src/utils/constants.js:25
 msgid "A/B Test Variant"
 msgstr ""
 

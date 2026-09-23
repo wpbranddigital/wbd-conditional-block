@@ -5,9 +5,9 @@
  * viewports, so avoid any fixed widths here).
  */
 
-.cb-panel {
+.wbdcobl-panel {
 
-	.cb-condition-row {
+	.wbdcobl-condition-row {
 		border: 1px solid #e0e0e0;
 		border-radius: 4px;
 		padding: 10px;
@@ -19,36 +19,36 @@
 		}
 	}
 
-	.cb-remove-condition {
+	.wbdcobl-remove-condition {
 		margin-top: 22px;
 	}
 
-	.cb-add-condition {
+	.wbdcobl-add-condition {
 		margin-top: 4px;
 		width: 100%;
 		justify-content: center;
 	}
 
-	.cb-field-label {
+	.wbdcobl-field-label {
 		font-weight: 500;
 		font-size: 11px;
 		text-transform: uppercase;
 		margin-bottom: 8px;
 	}
 
-	.cb-weekday-grid {
+	.wbdcobl-weekday-grid {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 4px 10px;
 	}
 
-	.cb-notice {
+	.wbdcobl-notice {
 		font-style: italic;
 		color: #757575;
 		font-size: 12px;
 	}
 
-	.cb-analytics-link {
+	.wbdcobl-analytics-link {
 		margin-top: 12px;
 		font-size: 12px;
 		text-align: center;
@@ -56,20 +56,20 @@
 }
 
 /* In-canvas indicator for blocks with active conditions. */
-.cb-has-conditions {
+.wbdcobl-has-conditions {
 	outline: 1px dashed #2271b1;
 	outline-offset: 2px;
 	position: relative;
 }
 
-.cb-conditional-group-editor {
+.wbdcobl-conditional-group-editor {
 	border: 1px dashed #757575;
 	border-radius: 4px;
 	padding: 8px;
 	min-height: 40px;
 }
 
-.cb-group-badge {
+.wbdcobl-group-badge {
 	display: inline-block;
 	font-size: 11px;
 	font-weight: 600;
@@ -87,9 +87,9 @@
    full-width overlay. */
 @media (max-width: 782px) {
 
-	.cb-panel {
+	.wbdcobl-panel {
 
-		.cb-weekday-grid {
+		.wbdcobl-weekday-grid {
 			gap: 6px 12px;
 		}
 	}

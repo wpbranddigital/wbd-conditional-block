@@ -3,7 +3,7 @@
  * View: Analytics dashboard.
  *
  * Expects $summary (array[]), $daily (array[]), $days (int), $name (string)
- * from CB_Admin::render_analytics_page().
+ * from WBDCOBL_Admin::render_analytics_page().
  *
  * @package WBD_Conditional_Block
  */
@@ -20,10 +20,10 @@ foreach ( $daily as $row ) {
 	$max_daily = max( $max_daily, (int) $row['shown'] + (int) $row['hidden'] );
 }
 ?>
-<div class="wrap cb-wrap">
+<div class="wrap wbdcobl-wrap">
 	<h1><?php echo esc_html( $name ); ?> — <?php esc_html_e( 'Analytics', 'wbd-conditional-block' ); ?></h1>
 
-	<?php if ( isset( $_GET['cb_reset'] ) ) : // phpcs:ignore WordPress.Security.NonceVerification.Recommended ?>
+	<?php if ( isset( $_GET['wbdcobl_reset'] ) ) : // phpcs:ignore WordPress.Security.NonceVerification.Recommended ?>
 		<div class="notice notice-success is-dismissible"><p><?php esc_html_e( 'Analytics data has been reset.', 'wbd-conditional-block' ); ?></p></div>
 	<?php endif; ?>
 
@@ -31,7 +31,7 @@ foreach ( $daily as $row ) {
 		<?php esc_html_e( 'Every block with a Conditional Visibility rule reports here each time it is shown or hidden for a visitor.', 'wbd-conditional-block' ); ?>
 	</p>
 
-	<ul class="subsubsub cb-range-tabs">
+	<ul class="subsubsub wbdcobl-range-tabs">
 		<?php
 		$ranges = array(
 			7  => __( 'Last 7 days', 'wbd-conditional-block' ),
@@ -45,7 +45,7 @@ foreach ( $daily as $row ) {
 			$url = add_query_arg(
 				array(
 					'page'     => 'wbd-conditional-block',
-					'cb_range' => $range_days,
+					'wbdcobl_range' => $range_days,
 				),
 				admin_url( 'admin.php' )
 			);
@@ -63,14 +63,14 @@ foreach ( $daily as $row ) {
 	<div style="clear:both;"></div>
 
 	<?php if ( empty( $summary ) ) : ?>
-		<div class="cb-empty-state">
+		<div class="wbdcobl-empty-state">
 			<p><strong><?php esc_html_e( 'No analytics data yet.', 'wbd-conditional-block' ); ?></strong></p>
 			<p><?php esc_html_e( 'Add a Conditional Visibility rule to any block in the editor, publish the page, and visit it — data will show up here.', 'wbd-conditional-block' ); ?></p>
 		</div>
 	<?php else : ?>
 
 		<h2><?php esc_html_e( 'Daily views', 'wbd-conditional-block' ); ?></h2>
-		<div class="cb-chart" role="img" aria-label="<?php esc_attr_e( 'Bar chart of daily shown vs. hidden block renders', 'wbd-conditional-block' ); ?>">
+		<div class="wbdcobl-chart" role="img" aria-label="<?php esc_attr_e( 'Bar chart of daily shown vs. hidden block renders', 'wbd-conditional-block' ); ?>">
 			<?php foreach ( $daily as $row ) : ?>
 				<?php
 				$shown      = (int) $row['shown'];
@@ -78,23 +78,23 @@ foreach ( $daily as $row ) {
 				$shown_pct  = round( ( $shown / $max_daily ) * 100, 2 );
 				$hidden_pct = round( ( $hidden / $max_daily ) * 100, 2 );
 				?>
-				<div class="cb-chart-col" title="<?php echo esc_attr( $row['day'] . ': ' . $shown . ' shown, ' . $hidden . ' hidden' ); ?>">
-					<div class="cb-chart-bars">
-						<span class="cb-bar cb-bar-shown" style="height:<?php echo esc_attr( $shown_pct ); ?>%"></span>
-						<span class="cb-bar cb-bar-hidden" style="height:<?php echo esc_attr( $hidden_pct ); ?>%"></span>
+				<div class="wbdcobl-chart-col" title="<?php echo esc_attr( $row['day'] . ': ' . $shown . ' shown, ' . $hidden . ' hidden' ); ?>">
+					<div class="wbdcobl-chart-bars">
+						<span class="wbdcobl-bar wbdcobl-bar-shown" style="height:<?php echo esc_attr( $shown_pct ); ?>%"></span>
+						<span class="wbdcobl-bar wbdcobl-bar-hidden" style="height:<?php echo esc_attr( $hidden_pct ); ?>%"></span>
 					</div>
-					<span class="cb-chart-label"><?php echo esc_html( gmdate( 'M j', strtotime( $row['day'] ) ) ); ?></span>
+					<span class="wbdcobl-chart-label"><?php echo esc_html( gmdate( 'M j', strtotime( $row['day'] ) ) ); ?></span>
 				</div>
 			<?php endforeach; ?>
 		</div>
-		<p class="cb-legend">
-			<span class="cb-legend-swatch cb-bar-shown"></span> <?php esc_html_e( 'Shown', 'wbd-conditional-block' ); ?>
+		<p class="wbdcobl-legend">
+			<span class="wbdcobl-legend-swatch wbdcobl-bar-shown"></span> <?php esc_html_e( 'Shown', 'wbd-conditional-block' ); ?>
 			&nbsp;&nbsp;
-			<span class="cb-legend-swatch cb-bar-hidden"></span> <?php esc_html_e( 'Hidden', 'wbd-conditional-block' ); ?>
+			<span class="wbdcobl-legend-swatch wbdcobl-bar-hidden"></span> <?php esc_html_e( 'Hidden', 'wbd-conditional-block' ); ?>
 		</p>
 
 		<h2><?php esc_html_e( 'By block', 'wbd-conditional-block' ); ?></h2>
-		<table class="widefat striped cb-table">
+		<table class="widefat striped wbdcobl-table">
 			<thead>
 				<tr>
 					<th><?php esc_html_e( 'Block', 'wbd-conditional-block' ); ?></th>
@@ -128,9 +128,9 @@ foreach ( $daily as $row ) {
 			</tbody>
 		</table>
 
-		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="cb-reset-form" onsubmit="return confirm('<?php echo esc_js( __( 'This will permanently delete all analytics data. Continue?', 'wbd-conditional-block' ) ); ?>');">
-			<input type="hidden" name="action" value="cb_reset_analytics" />
-			<?php wp_nonce_field( 'cb_reset_analytics' ); ?>
+		<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" class="wbdcobl-reset-form" onsubmit="return confirm('<?php echo esc_js( __( 'This will permanently delete all analytics data. Continue?', 'wbd-conditional-block' ) ); ?>');">
+			<input type="hidden" name="action" value="wbdcobl_reset_analytics" />
+			<?php wp_nonce_field( 'wbdcobl_reset_analytics' ); ?>
 			<?php submit_button( __( 'Reset analytics data', 'wbd-conditional-block' ), 'delete', 'submit', false ); ?>
 		</form>
 

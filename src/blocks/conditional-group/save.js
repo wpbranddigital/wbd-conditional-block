@@ -1,6 +1,6 @@
 /**
  * Save callback for the "Conditional Group" block. The block is rendered
- * dynamically on the frontend (see CB_Block_Group::render() in PHP), but
+ * dynamically on the frontend (see WBDCOBL_Block_Group::render() in PHP), but
  * WordPress still needs save() to serialize the inner block markup into
  * post_content so it survives edits, exports, and revisions.
  */

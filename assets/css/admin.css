@@ -4,11 +4,11 @@
  * (WordPress collapses the admin menu under ~960px).
  */
 
-.cb-wrap .cb-range-tabs {
+.wbdcobl-wrap .wbdcobl-range-tabs {
 	margin: 8px 0 16px;
 }
 
-.cb-empty-state {
+.wbdcobl-empty-state {
 	background: #fff;
 	border: 1px solid #c3c4c7;
 	border-left: 4px solid #2271b1;
@@ -16,7 +16,7 @@
 	max-width: 640px;
 }
 
-.cb-chart {
+.wbdcobl-chart {
 	display: flex;
 	align-items: flex-end;
 	gap: 4px;
@@ -28,7 +28,7 @@
 	max-width: 900px;
 }
 
-.cb-chart-col {
+.wbdcobl-chart-col {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -38,7 +38,7 @@
 	height: 100%;
 }
 
-.cb-chart-bars {
+.wbdcobl-chart-bars {
 	display: flex;
 	align-items: flex-end;
 	gap: 2px;
@@ -47,22 +47,22 @@
 	justify-content: center;
 }
 
-.cb-bar {
+.wbdcobl-bar {
 	width: 6px;
 	min-height: 1px;
 	border-radius: 2px 2px 0 0;
 	display: inline-block;
 }
 
-.cb-bar-shown {
+.wbdcobl-bar-shown {
 	background: #2271b1;
 }
 
-.cb-bar-hidden {
+.wbdcobl-bar-hidden {
 	background: #d63638;
 }
 
-.cb-chart-label {
+.wbdcobl-chart-label {
 	font-size: 10px;
 	color: #646970;
 	margin-top: 6px;
@@ -70,12 +70,12 @@
 	white-space: nowrap;
 }
 
-.cb-legend {
+.wbdcobl-legend {
 	font-size: 12px;
 	color: #646970;
 }
 
-.cb-legend-swatch {
+.wbdcobl-legend-swatch {
 	display: inline-block;
 	width: 10px;
 	height: 10px;
@@ -84,26 +84,26 @@
 	vertical-align: middle;
 }
 
-.cb-table {
+.wbdcobl-table {
 	max-width: 900px;
 }
 
-.cb-reset-form {
+.wbdcobl-reset-form {
 	margin-top: 20px;
 }
 
 /* Narrow admin viewport (collapsed menu / small tablet & mobile) */
 @media (max-width: 782px) {
-	.cb-chart {
+	.wbdcobl-chart {
 		height: 160px;
 	}
 
-	.cb-chart-bars {
+	.wbdcobl-chart-bars {
 		height: 120px;
 	}
 
-	.cb-table th,
-	.cb-table td {
+	.wbdcobl-table th,
+	.wbdcobl-table td {
 		font-size: 13px;
 	}
 }

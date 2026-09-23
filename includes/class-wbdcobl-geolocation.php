@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class CB_Geolocation
+ * Class WBDCOBL_Geolocation
  *
  * Free-tier friendly IP-to-country lookup. Order of preference:
  *  1. A hosting/CDN header, when present (Cloudflare's CF-IPCountry,
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *     pages fast. Failures are cached too (short TTL) so a slow/broken
  *     API never blocks rendering.
  */
-class CB_Geolocation {
+class WBDCOBL_Geolocation {
 
 	/**
 	 * Get the ISO 3166-1 alpha-2 country code for the current visitor.
@@ -63,7 +63,7 @@ class CB_Geolocation {
 			return '';
 		}
 
-		$cache_key = 'cb_geo_' . md5( $ip );
+		$cache_key = 'wbdcobl_geo_' . md5( $ip );
 		$cached    = get_transient( $cache_key );
 		if ( false !== $cached ) {
 			return $cached;

@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class CB_REST_API
+ * Class WBDCOBL_REST_API
  */
-class CB_REST_API {
+class WBDCOBL_REST_API {
 
 	/**
 	 * REST namespace.
@@ -136,14 +136,14 @@ class CB_REST_API {
 	 * @return WP_REST_Response
 	 */
 	public static function analytics_summary( $request ) {
-		require_once CB_PLUGIN_DIR . 'includes/class-cb-analytics.php';
+		require_once WBDCOBL_PLUGIN_DIR . 'includes/class-wbdcobl-analytics.php';
 
 		$days = max( 0, (int) $request->get_param( 'days' ) );
 
 		return rest_ensure_response(
 			array(
-				'summary' => CB_Analytics::get_summary( $days ),
-				'daily'   => CB_Analytics::get_daily_totals( $days ),
+				'summary' => WBDCOBL_Analytics::get_summary( $days ),
+				'daily'   => WBDCOBL_Analytics::get_daily_totals( $days ),
 			)
 		);
 	}

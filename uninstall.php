@@ -17,15 +17,15 @@ function wbd_conditional_block_uninstall() {
 	global $wpdb;
 
 	// Only drop tables and data if user explicitly enabled it in settings.
-	$settings = get_option( 'cb_settings', array() );
+	$settings = get_option( 'wbdcobl_settings', array() );
 	if ( ! empty( $settings['delete_on_uninstall'] ) ) {
-		$table = $wpdb->prefix . 'cb_analytics';
+		$table = $wpdb->prefix . 'wbdcobl_analytics';
 		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 		$wpdb->query( "DROP TABLE IF EXISTS {$table}" );
 
 		// Remove options.
-		delete_option( 'cb_settings' );
-		delete_option( 'cb_analytics_db_version' );
+		delete_option( 'wbdcobl_settings' );
+		delete_option( 'wbdcobl_analytics_db_version' );
 	}
 
 	// Multisite: repeat for every site in the network.
@@ -34,14 +34,14 @@ function wbd_conditional_block_uninstall() {
 		foreach ( $site_ids as $site_id ) {
 			switch_to_blog( $site_id );
 
-			$settings = get_option( 'cb_settings', array() );
+			$settings = get_option( 'wbdcobl_settings', array() );
 			if ( ! empty( $settings['delete_on_uninstall'] ) ) {
-				$table = $wpdb->prefix . 'cb_analytics';
+				$table = $wpdb->prefix . 'wbdcobl_analytics';
 				// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 				$wpdb->query( "DROP TABLE IF EXISTS {$table}" );
 
-				delete_option( 'cb_settings' );
-				delete_option( 'cb_analytics_db_version' );
+				delete_option( 'wbdcobl_settings' );
+				delete_option( 'wbdcobl_analytics_db_version' );
 			}
 
 			restore_current_blog();

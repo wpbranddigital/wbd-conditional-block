@@ -65,7 +65,7 @@ export default function ConditionalPanel( { value, onChange } ) {
 		<PanelBody
 			title={ __( 'Conditional Visibility', 'wbd-conditional-block' ) }
 			initialOpen={ enabled }
-			className="cb-panel"
+			className="wbdcobl-panel"
 		>
 			<ToggleControl
 				label={ __(
@@ -152,7 +152,7 @@ export default function ConditionalPanel( { value, onChange } ) {
 								],
 							} )
 						}
-						className="cb-add-condition"
+						className="wbdcobl-add-condition"
 					>
 						{ __( 'Add condition', 'wbd-conditional-block' ) }
 					</Button>
@@ -167,7 +167,7 @@ export default function ConditionalPanel( { value, onChange } ) {
 					) }
 
 					{ data.adminUrl && (
-						<p className="cb-analytics-link">
+						<p className="wbdcobl-analytics-link">
 							<a
 								href={ data.adminUrl }
 								target="_blank"

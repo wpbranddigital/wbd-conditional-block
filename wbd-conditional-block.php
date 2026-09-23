@@ -2,9 +2,8 @@
 /**
  * Plugin Name:       WBD Conditional Block
  * Description:       Show or hide any Gutenberg block based on login status, user role, device, date/time, page type, country, WooCommerce, custom fields, language, and A/B testing — with AND/OR logic and built-in analytics. All features are free.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 6.5 
- * Tested up to:      7.1
  * Requires PHP:      7.4
  * Author:            WPBrand Digital
  * Author URI:        https://wpbranddigital.org
@@ -24,12 +23,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Plugin constants.
  */
-define( 'CB_VERSION', '1.0.0' );
-define( 'CB_PLUGIN_FILE', __FILE__ );
-define( 'CB_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-define( 'CB_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-define( 'CB_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
-define( 'CB_ANALYTICS_TABLE_VERSION', '1.0' );
+define( 'WBDCOBL_VERSION', '1.0.1' );
+define( 'WBDCOBL_PLUGIN_FILE', __FILE__ );
+define( 'WBDCOBL_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'WBDCOBL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'WBDCOBL_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+define( 'WBDCOBL_ANALYTICS_TABLE_VERSION', '1.0' );
 
 /**
  * Main plugin bootstrap class.
@@ -72,33 +71,33 @@ final class WBD_Conditional_Block {
 	 * Require all class files.
 	 */
 	private function includes() {
-		require_once CB_PLUGIN_DIR . 'includes/functions.php';
-		require_once CB_PLUGIN_DIR . 'includes/class-cb-conditions.php';
-		require_once CB_PLUGIN_DIR . 'includes/class-cb-geolocation.php';
-		require_once CB_PLUGIN_DIR . 'includes/class-cb-renderer.php';
-		require_once CB_PLUGIN_DIR . 'includes/class-cb-analytics.php';
-		require_once CB_PLUGIN_DIR . 'includes/class-cb-rest-api.php';
-		require_once CB_PLUGIN_DIR . 'includes/class-cb-admin.php';
-		require_once CB_PLUGIN_DIR . 'includes/class-cb-block-group.php';
+		require_once WBDCOBL_PLUGIN_DIR . 'includes/functions.php';
+		require_once WBDCOBL_PLUGIN_DIR . 'includes/class-wbdcobl-conditions.php';
+		require_once WBDCOBL_PLUGIN_DIR . 'includes/class-wbdcobl-geolocation.php';
+		require_once WBDCOBL_PLUGIN_DIR . 'includes/class-wbdcobl-renderer.php';
+		require_once WBDCOBL_PLUGIN_DIR . 'includes/class-wbdcobl-analytics.php';
+		require_once WBDCOBL_PLUGIN_DIR . 'includes/class-wbdcobl-rest-api.php';
+		require_once WBDCOBL_PLUGIN_DIR . 'includes/class-wbdcobl-admin.php';
+		require_once WBDCOBL_PLUGIN_DIR . 'includes/class-wbdcobl-block-group.php';
 	}
 
 	/**
 	 * Register WordPress hooks.
 	 */
 	private function init_hooks() {
-		register_activation_hook( CB_PLUGIN_FILE, array( __CLASS__, 'activate' ) );
-		register_deactivation_hook( CB_PLUGIN_FILE, array( __CLASS__, 'deactivate' ) );
+		register_activation_hook( WBDCOBL_PLUGIN_FILE, array( __CLASS__, 'activate' ) );
+		register_deactivation_hook( WBDCOBL_PLUGIN_FILE, array( __CLASS__, 'deactivate' ) );
 
 		add_action( 'init', array( $this, 'register_block_attributes' ) );
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_editor_assets' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_assets' ) );
 
 		// Subsystem bootstraps.
-		CB_Renderer::init();
-		CB_Analytics::init();
-		CB_REST_API::init();
-		CB_Admin::init();
-		CB_Block_Group::init();
+		WBDCOBL_Renderer::init();
+		WBDCOBL_Analytics::init();
+		WBDCOBL_REST_API::init();
+		WBDCOBL_Admin::init();
+		WBDCOBL_Block_Group::init();
 	}
 
 
@@ -151,29 +150,29 @@ final class WBD_Conditional_Block {
 	 * Enqueue block-editor-only assets (the Conditional Visibility panel).
 	 */
 	public function enqueue_editor_assets() {
-		$asset_file = CB_PLUGIN_DIR . 'build/index.asset.php';
+		$asset_file = WBDCOBL_PLUGIN_DIR . 'build/index.asset.php';
 		$asset      = file_exists( $asset_file )
 			? include $asset_file
 			: array(
 				'dependencies' => array( 'wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-i18n', 'wp-hooks', 'wp-compose', 'wp-data', 'wp-block-editor' ),
-				'version'      => CB_VERSION,
+				'version'      => WBDCOBL_VERSION,
 			);
 
 		wp_enqueue_script(
 			'wbd-conditional-block-editor',
-			CB_PLUGIN_URL . 'build/index.js',
+			WBDCOBL_PLUGIN_URL . 'build/index.js',
 			$asset['dependencies'],
 			$asset['version'],
 			true
 		);
 
-		wp_set_script_translations( 'wbd-conditional-block-editor', 'wbd-conditional-block', CB_PLUGIN_DIR . 'languages' );
+		wp_set_script_translations( 'wbd-conditional-block-editor', 'wbd-conditional-block', WBDCOBL_PLUGIN_DIR . 'languages' );
 
 		wp_enqueue_style(
 			'wbd-conditional-block-editor',
-			CB_PLUGIN_URL . 'build/index.css',
+			WBDCOBL_PLUGIN_URL . 'build/index.css',
 			array( 'wp-components' ),
-			file_exists( CB_PLUGIN_DIR . 'build/index.css' ) ? filemtime( CB_PLUGIN_DIR . 'build/index.css' ) : CB_VERSION
+			file_exists( WBDCOBL_PLUGIN_DIR . 'build/index.css' ) ? filemtime( WBDCOBL_PLUGIN_DIR . 'build/index.css' ) : WBDCOBL_VERSION
 		);
 
 		$roles = array();
@@ -195,7 +194,7 @@ final class WBD_Conditional_Block {
 				'restUrl'        => esc_url_raw( rest_url( 'wbd-conditional-block/v1/' ) ),
 				'nonce'          => wp_create_nonce( 'wp_rest' ),
 				'adminUrl'       => esc_url_raw( admin_url( 'admin.php?page=wbd-conditional-block' ) ),
-				'pluginName'     => CB_Admin::get_display_name(),
+				'pluginName'     => WBDCOBL_Admin::get_display_name(),
 			)
 		);
 	}
@@ -229,9 +228,9 @@ final class WBD_Conditional_Block {
 
 		wp_enqueue_script(
 			'wbd-conditional-block-detect',
-			CB_PLUGIN_URL . 'assets/js/detect-device.js',
+			WBDCOBL_PLUGIN_URL . 'assets/js/detect-device.js',
 			array(),
-			CB_VERSION,
+			WBDCOBL_VERSION,
 			array(
 				'in_footer' => false, // Needs to run before render-blocking content is evaluated on next load.
 			)
@@ -239,9 +238,9 @@ final class WBD_Conditional_Block {
 
 		wp_enqueue_style(
 			'wbd-conditional-block-frontend',
-			CB_PLUGIN_URL . 'assets/css/frontend.css',
+			WBDCOBL_PLUGIN_URL . 'assets/css/frontend.css',
 			array(),
-			CB_VERSION
+			WBDCOBL_VERSION
 		);
 	}
 
@@ -249,12 +248,12 @@ final class WBD_Conditional_Block {
 	 * Activation callback — create the analytics table and seed default options.
 	 */
 	public static function activate() {
-		require_once CB_PLUGIN_DIR . 'includes/class-cb-analytics.php';
-		CB_Analytics::create_table();
+		require_once WBDCOBL_PLUGIN_DIR . 'includes/class-wbdcobl-analytics.php';
+		WBDCOBL_Analytics::create_table();
 
-		if ( false === get_option( 'cb_settings' ) ) {
+		if ( false === get_option( 'wbdcobl_settings' ) ) {
 			add_option(
-				'cb_settings',
+				'wbdcobl_settings',
 				array(
 					'white_label_name'     => '',
 					'geolocation_provider' => 'auto',
@@ -264,7 +263,7 @@ final class WBD_Conditional_Block {
 			);
 		}
 
-		update_option( 'cb_analytics_db_version', CB_ANALYTICS_TABLE_VERSION );
+		update_option( 'wbdcobl_analytics_db_version', WBDCOBL_ANALYTICS_TABLE_VERSION );
 	}
 
 	/**
@@ -282,4 +281,4 @@ WBD_Conditional_Block::instance();
  * blocks that don't expose attrs through render_block (rare, but some
  * dynamic blocks strip attrs) is handled defensively inside the renderer.
  */
-add_filter( 'render_block', array( 'CB_Renderer', 'filter_block_output' ), 10, 2 );
+add_filter( 'render_block', array( 'WBDCOBL_Renderer', 'filter_block_output' ), 10, 2 );

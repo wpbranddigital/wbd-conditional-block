@@ -9,7 +9,7 @@ import { __ } from '@wordpress/i18n';
 
 export default function Edit( { attributes } ) {
 	const blockProps = useBlockProps( {
-		className: 'cb-conditional-group-editor',
+		className: 'wbdcobl-conditional-group-editor',
 	} );
 
 	const isActive = !! (
@@ -19,7 +19,7 @@ export default function Edit( { attributes } ) {
 	return (
 		<div { ...blockProps }>
 			{ isActive && (
-				<div className="cb-group-badge">
+				<div className="wbdcobl-group-badge">
 					{ __(
 						'Conditional Group — rules active',
 						'wbd-conditional-block'

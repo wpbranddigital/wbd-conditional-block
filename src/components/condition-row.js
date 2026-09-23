@@ -15,7 +15,7 @@ import ConditionValueControl from './condition-value-control';
 
 export default function ConditionRow( { condition, onChange, onRemove } ) {
 	return (
-		<div className="cb-condition-row">
+		<div className="wbdcobl-condition-row">
 			<Flex align="flex-start" gap={ 2 }>
 				<FlexBlock>
 					<SelectControl
@@ -54,12 +54,12 @@ export default function ConditionRow( { condition, onChange, onRemove } ) {
 						label={ __( 'Remove condition', 'wbd-conditional-block' ) }
 						onClick={ onRemove }
 						isSmall
-						className="cb-remove-condition"
+						className="wbdcobl-remove-condition"
 					/>
 				</FlexItem>
 			</Flex>
 
-			<div className="cb-condition-value">
+			<div className="wbdcobl-condition-value">
 				<ConditionValueControl
 					type={ condition.type }
 					value={ condition.value }

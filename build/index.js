@@ -31,13 +31,13 @@ function Edit({
   attributes
 }) {
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)({
-    className: 'cb-conditional-group-editor'
+    className: 'wbdcobl-conditional-group-editor'
   });
   const isActive = !!(attributes.cbConditions && attributes.cbConditions.enabled);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     ...blockProps,
     children: [isActive && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "cb-group-badge",
+      className: "wbdcobl-group-badge",
       children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Conditional Group — rules active', 'wbd-conditional-block')
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks, {
       templateLock: false,
@@ -64,7 +64,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
 /**
  * Save callback for the "Conditional Group" block. The block is rendered
- * dynamically on the frontend (see CB_Block_Group::render() in PHP), but
+ * dynamically on the frontend (see WBDCOBL_Block_Group::render() in PHP), but
  * WordPress still needs save() to serialize the inner block markup into
  * post_content so it survives edits, exports, and revisions.
  */
@@ -114,7 +114,7 @@ function ConditionRow({
   onRemove
 }) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-    className: "cb-condition-row",
+    className: "wbdcobl-condition-row",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Flex, {
       align: "flex-start",
       gap: 2,
@@ -149,11 +149,11 @@ function ConditionRow({
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Remove condition', 'wbd-conditional-block'),
           onClick: onRemove,
           isSmall: true,
-          className: "cb-remove-condition"
+          className: "wbdcobl-remove-condition"
         })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-      className: "cb-condition-value",
+      className: "wbdcobl-condition-value",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_condition_value_control__WEBPACK_IMPORTED_MODULE_4__["default"], {
         type: condition.type,
         value: condition.value,
@@ -413,10 +413,10 @@ function DateTimeValue({
       })]
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-        className: "cb-field-label",
+        className: "wbdcobl-field-label",
         children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Days', 'wbd-conditional-block')
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "cb-weekday-grid",
+        className: "wbdcobl-weekday-grid",
         children: _utils_constants__WEBPACK_IMPORTED_MODULE_3__.WEEKDAYS.map(day => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.CheckboxControl, {
           label: day.label,
           checked: (v.days || []).includes(day.value),
@@ -521,7 +521,7 @@ function WooCommerceValue({
   const v = value && typeof value === 'object' ? value : {};
   if (!data.hasWooCommerce) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-      className: "cb-notice",
+      className: "wbdcobl-notice",
       children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('WooCommerce is not active. This condition will always evaluate to false.', 'wbd-conditional-block')
     });
   }
@@ -574,7 +574,7 @@ function CustomFieldValue({
   const v = value && typeof value === 'object' ? value : {};
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [!data.hasACF && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-      className: "cb-notice",
+      className: "wbdcobl-notice",
       children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('ACF not detected — falling back to plain post meta lookup by key.', 'wbd-conditional-block')
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextControl, {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Field key', 'wbd-conditional-block'),
@@ -686,7 +686,7 @@ function ConditionalPanel({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Conditional Visibility', 'wbd-conditional-block'),
     initialOpen: enabled,
-    className: "cb-panel",
+    className: "wbdcobl-panel",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Show/hide this block based on conditions', 'wbd-conditional-block'),
       checked: enabled,
@@ -741,14 +741,14 @@ function ConditionalPanel({
         onClick: () => update({
           conditions: [...rules, (0,_utils_constants__WEBPACK_IMPORTED_MODULE_5__.createEmptyCondition)()]
         }),
-        className: "cb-add-condition",
+        className: "wbdcobl-add-condition",
         children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add condition', 'wbd-conditional-block')
       }), rules.length === 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Notice, {
         status: "warning",
         isDismissible: false,
         children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('No conditions set — this block will always be visible.', 'wbd-conditional-block')
       }), data.adminUrl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
-        className: "cb-analytics-link",
+        className: "wbdcobl-analytics-link",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
           href: data.adminUrl,
           target: "_blank",
@@ -891,7 +891,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * Condition type option list. Keep the `value`s in sync with the PHP
- * switch statement in includes/class-cb-conditions.php.
+ * switch statement in includes/class-wbdcobl-conditions.php.
  */
 const CONDITION_TYPES = [{
   value: 'login_status',
@@ -1564,7 +1564,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const EXCLUDED_BLOCKS = ['core/freeform', 'core/legacy-widget', 'core/widget-area'];
-const CB_CONDITIONS_DEFAULT = {
+const WBDCOBL_CONDITIONS_DEFAULT = {
   enabled: false,
   logic: 'all',
   conditions: [],
@@ -1602,7 +1602,7 @@ function addConditionsAttribute(settings, name) {
     ...settings.attributes,
     cbConditions: {
       type: 'object',
-      default: CB_CONDITIONS_DEFAULT
+      default: WBDCOBL_CONDITIONS_DEFAULT
     }
   };
   return settings;
@@ -1664,7 +1664,7 @@ const withConditionalIndicator = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_
     }
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(BlockListBlock, {
       ...props,
-      className: (props.className ? props.className + ' ' : '') + 'cb-has-conditions',
+      className: (props.className ? props.className + ' ' : '') + 'wbdcobl-has-conditions',
       children: props.children
     });
   };

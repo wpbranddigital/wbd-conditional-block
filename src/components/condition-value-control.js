@@ -330,10 +330,10 @@ function DateTimeValue( { value, onChange } ) {
 				</>
 			) : (
 				<>
-					<p className="cb-field-label">
+					<p className="wbdcobl-field-label">
 						{ __( 'Days', 'wbd-conditional-block' ) }
 					</p>
-					<div className="cb-weekday-grid">
+					<div className="wbdcobl-weekday-grid">
 						{ WEEKDAYS.map( ( day ) => (
 							<CheckboxControl
 								key={ day.value }
@@ -486,7 +486,7 @@ function WooCommerceValue( { value, onChange } ) {
 
 	if ( ! data.hasWooCommerce ) {
 		return (
-			<p className="cb-notice">
+			<p className="wbdcobl-notice">
 				{ __(
 					'WooCommerce is not active. This condition will always evaluate to false.',
 					'wbd-conditional-block'
@@ -577,7 +577,7 @@ function CustomFieldValue( { value, onChange } ) {
 	return (
 		<>
 			{ ! data.hasACF && (
-				<p className="cb-notice">
+				<p className="wbdcobl-notice">
 					{ __(
 						'ACF not detected — falling back to plain post meta lookup by key.',
 						'wbd-conditional-block'

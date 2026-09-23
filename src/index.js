@@ -26,7 +26,7 @@ const EXCLUDED_BLOCKS = [
 	'core/widget-area',
 ];
 
-const CB_CONDITIONS_DEFAULT = {
+const WBDCOBL_CONDITIONS_DEFAULT = {
 	enabled: false,
 	logic: 'all',
 	conditions: [],
@@ -65,7 +65,7 @@ function addConditionsAttribute( settings, name ) {
 		...settings.attributes,
 		cbConditions: {
 			type: 'object',
-			default: CB_CONDITIONS_DEFAULT,
+			default: WBDCOBL_CONDITIONS_DEFAULT,
 		},
 	};
 
@@ -143,7 +143,7 @@ const withConditionalIndicator = createHigherOrderComponent(
 					{ ...props }
 					className={
 						( props.className ? props.className + ' ' : '' ) +
-						'cb-has-conditions'
+						'wbdcobl-has-conditions'
 					}
 				>
 					{ props.children }

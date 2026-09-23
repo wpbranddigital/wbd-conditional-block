@@ -62,11 +62,11 @@
 	var device = detectDeviceType();
 	var browser = detectBrowser();
 
-	if ( getCookie( 'cb_device' ) !== device ) {
-		setCookie( 'cb_device', device, 1 );
+	if ( getCookie( 'wbdcobl_device' ) !== device ) {
+		setCookie( 'wbdcobl_device', device, 1 );
 	}
-	if ( getCookie( 'cb_browser' ) !== browser ) {
-		setCookie( 'cb_browser', browser, 1 );
+	if ( getCookie( 'wbdcobl_browser' ) !== browser ) {
+		setCookie( 'wbdcobl_browser', browser, 1 );
 	}
 
 	if ( document.body ) {
@@ -76,7 +76,7 @@
 	}
 
 	function applyBodyClasses() {
-		document.body.classList.add( 'cb-device-' + device );
-		document.body.classList.add( 'cb-browser-' + browser );
+		document.body.classList.add( 'wbdcobl-device-' + device );
+		document.body.classList.add( 'wbdcobl-browser-' + browser );
 	}
 } )();

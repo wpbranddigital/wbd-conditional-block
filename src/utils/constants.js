@@ -5,7 +5,7 @@ import { __ } from '@wordpress/i18n';
 
 /**
  * Condition type option list. Keep the `value`s in sync with the PHP
- * switch statement in includes/class-cb-conditions.php.
+ * switch statement in includes/class-wbdcobl-conditions.php.
  */
 export const CONDITION_TYPES = [
 	{

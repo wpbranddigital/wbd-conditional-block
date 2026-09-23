@@ -7,61 +7,61 @@
  * sidebar is ~280px on desktop and goes full-width/overlay on smaller
  * viewports, so avoid any fixed widths here).
  */
-.cb-panel .cb-condition-row {
+.wbdcobl-panel .wbdcobl-condition-row {
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 12px;
   background: #fafafa;
 }
-.cb-panel .cb-condition-row .components-base-control {
+.wbdcobl-panel .wbdcobl-condition-row .components-base-control {
   margin-bottom: 8px;
 }
-.cb-panel .cb-remove-condition {
+.wbdcobl-panel .wbdcobl-remove-condition {
   margin-top: 22px;
 }
-.cb-panel .cb-add-condition {
+.wbdcobl-panel .wbdcobl-add-condition {
   margin-top: 4px;
   width: 100%;
   justify-content: center;
 }
-.cb-panel .cb-field-label {
+.wbdcobl-panel .wbdcobl-field-label {
   font-weight: 500;
   font-size: 11px;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
-.cb-panel .cb-weekday-grid {
+.wbdcobl-panel .wbdcobl-weekday-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 10px;
 }
-.cb-panel .cb-notice {
+.wbdcobl-panel .wbdcobl-notice {
   font-style: italic;
   color: #757575;
   font-size: 12px;
 }
-.cb-panel .cb-analytics-link {
+.wbdcobl-panel .wbdcobl-analytics-link {
   margin-top: 12px;
   font-size: 12px;
   text-align: center;
 }
 
 /* In-canvas indicator for blocks with active conditions. */
-.cb-has-conditions {
+.wbdcobl-has-conditions {
   outline: 1px dashed #2271b1;
   outline-offset: 2px;
   position: relative;
 }
 
-.cb-conditional-group-editor {
+.wbdcobl-conditional-group-editor {
   border: 1px dashed #757575;
   border-radius: 4px;
   padding: 8px;
   min-height: 40px;
 }
 
-.cb-group-badge {
+.wbdcobl-group-badge {
   display: inline-block;
   font-size: 11px;
   font-weight: 600;
@@ -78,7 +78,7 @@
    (phones, small tablets) where the settings sidebar becomes a
    full-width overlay. */
 @media (max-width: 782px) {
-  .cb-panel .cb-weekday-grid {
+  .wbdcobl-panel .wbdcobl-weekday-grid {
     gap: 6px 12px;
   }
 }
